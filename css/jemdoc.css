@@ -402,7 +402,7 @@ table.imgtable, table.imgtable td {
 }
 
 .publication_container {
-	padding: 6px;
+	padding: 0px;
 	flex-direction: row;
 	display: flex;
 	/* min-height: 88px; */
@@ -410,12 +410,13 @@ table.imgtable, table.imgtable td {
 }
 
 .publication_image {
-	margin-left: 10px;
+	margin-left: 6px;
 }
 
 .publication_image img {
+	padding: 2px;
 	margin-top: 2px;
-	border-radius: 8px;
+	border-radius: 6px;
 	box-shadow: 1px 1px 4px #444;
 	/* width: 80px;
 	height: 80px; */
@@ -424,8 +425,8 @@ table.imgtable, table.imgtable td {
 }
 
 .publication_title {
-	margin-left: 15px;
-	margin-bottom: 3.5px;
+	margin-left: 20px;
+	margin-bottom: 0px;
 }
 
 .newline_bg {
