@@ -424,6 +424,11 @@ table.imgtable, table.imgtable td {
 	height: 5.6em;
 }
 
+.obfuscate {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
 .publication_title {
 	margin-left: 20px;
 	margin-bottom: 0px;
