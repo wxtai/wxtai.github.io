@@ -402,7 +402,7 @@ table.imgtable, table.imgtable td {
 }
 
 .publication_container {
-	padding: 0px;
+	padding: 3px;
 	flex-direction: row;
 	display: flex;
 	/* min-height: 88px; */
