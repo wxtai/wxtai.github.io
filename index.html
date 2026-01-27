@@ -1,28 +1,27 @@
-
 <!doctype html>
 <html>
 
 <head>
-<title>Wenxin Tai</title>
+    <title>Wenxin Tai</title>
 
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JD0RNZS77S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JD0RNZS77S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-JD0RNZS77S');
-</script>
+        gtag('config', 'G-JD0RNZS77S');
+    </script>
 
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="keywords" content="Wenxin Tai, UESTC"> 
-<meta name="description" content="Wenxin Tai's home page">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="css/jemdoc.css" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="keywords" content="Wenxin Tai, UESTC">
+    <meta name="description" content="Wenxin Tai's home page">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/jemdoc.css" type="text/css" />
 
-<!-- <script>
+    <!-- <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -32,248 +31,272 @@
   ga('send', 'pageview');
 </script> -->
 
-<!-- Show more content -->
-<script type="text/javascript">
-    function toggle_vis(id) {
-        // var e = document.getElementById(id);
-        var e = document.getElementsByClassName(id);
-        var showText = document.getElementById("showText");
-        for (var i = 0; i < e.length; i++) {
-            if (e[i].style.display == "none") {
-                e[i].style.display = "inline";
-                showText.innerHTML = "[Show less]";
-            } else {
-                e[i].style.display = "none";
-                showText.innerHTML = "[Show more]";
-            }
-        }
-    }
-
-    function toggle_research_vis(target, tabElement) {
-        var is_current_summary = 0;
-
-        var e = document.getElementsByClassName("research_summary");
-        for (var i = 0; i < e.length; i++) {
-            if (e[i].id == target) {
-                if (e[i].style.display == "inline") {
-                    is_current_summary = 1;
+    <!-- Show more content -->
+    <script type="text/javascript">
+        function toggle_vis(id) {
+            // var e = document.getElementById(id);
+            var e = document.getElementsByClassName(id);
+            var showText = document.getElementById("showText");
+            for (var i = 0; i < e.length; i++) {
+                if (e[i].style.display == "none") {
+                    e[i].style.display = "inline";
+                    showText.innerHTML = "[Show less]";
                 } else {
-                    e[i].style.display = "inline";
+                    e[i].style.display = "none";
+                    showText.innerHTML = "[Show more]";
                 }
-            } else {
-                e[i].style.display = "none";
             }
         }
 
-        var e = document.getElementsByClassName("progress_button");
-        for (var i = 0; i < e.length; i++) {
-            if (e[i].id == target + "_button") {
-                if (is_current_summary == 0) {
-                    e[i].style.display = "inline";
+        function toggle_research_vis(target, tabElement) {
+            var is_current_summary = 0;
+
+            var e = document.getElementsByClassName("research_summary");
+            for (var i = 0; i < e.length; i++) {
+                if (e[i].id == target) {
+                    if (e[i].style.display == "inline") {
+                        is_current_summary = 1;
+                    } else {
+                        e[i].style.display = "inline";
+                    }
+                } else {
+                    e[i].style.display = "none";
                 }
-            } else {
-                e[i].style.display = "none";
+            }
+
+            var e = document.getElementsByClassName("progress_button");
+            for (var i = 0; i < e.length; i++) {
+                if (e[i].id == target + "_button") {
+                    if (is_current_summary == 0) {
+                        e[i].style.display = "inline";
+                    }
+                } else {
+                    e[i].style.display = "none";
+                }
+            }
+
+            var e = document.getElementsByClassName("goal_tabs");
+            for (var i = 0; i < e.length; i++) {
+                if (e[i].id != target + "_goal_tabs") {
+                    e[i].style.display = "none";
+                }
+            }
+
+            var e = document.getElementsByClassName("highlight_research_tab");
+            for (var i = 0; i < e.length; i++) {
+                e[i].className = "research_tab";
+            }
+            tabElement.className = "highlight_research_tab"
+        }
+
+        function toggle_goal_vis(id, goal_tabs_id, goal) {
+            var e = document.getElementById(id);
+            e.style.display = "none";
+            var goal_tabs = document.getElementById(goal_tabs_id);
+            goal_tabs.style.display = "inline";
+
+            var goal_tab = document.getElementById(goal + "_tab");
+            toggle_goal_progress_vis(goal_tab);
+            // add_goal_progress_div(goal);
+        }
+
+        function toggle_goal_progress_vis(tabElement) {
+            var target = tabElement.id;
+            target = target.substring(0, target.length - 4);
+
+            var e = document.getElementsByClassName("goal_progress");
+            for (var i = 0; i < e.length; i++) {
+                if (e[i].id == target) {
+                    e[i].style.display = "inline";
+                } else {
+                    e[i].style.display = "none";
+                }
+            }
+
+            var e = document.getElementsByClassName("highlight_goal_tab");
+            for (var i = 0; i < e.length; i++) {
+                e[i].className = "goal_tab";
+            }
+            tabElement.className = "highlight_goal_tab"
+
+            add_goal_progress_div(target);
+        }
+
+        function add_goal_progress_div(goal) {
+            var e = document.getElementById(goal);
+            if (e && e.children.length == 0) {
+                var children = Array.from(document.getElementsByClassName(goal));
+                for (var i = 0; i < children.length; i++) {
+                    var cloned_div = children[i].cloneNode(true);
+                    cloned_div.className = "publication_container";
+                    e.appendChild(cloned_div);
+                }
             }
         }
-
-        var e = document.getElementsByClassName("goal_tabs");
-        for (var i = 0; i < e.length; i++) {
-            if (e[i].id != target + "_goal_tabs") {
-                e[i].style.display = "none";
-            }
-        }
-
-        var e = document.getElementsByClassName("highlight_research_tab");
-        for (var i = 0; i < e.length; i++) {
-            e[i].className = "research_tab";
-        }
-        tabElement.className = "highlight_research_tab"
-    }
-
-    function toggle_goal_vis(id, goal_tabs_id, goal) {
-        var e = document.getElementById(id);
-        e.style.display = "none";
-        var goal_tabs = document.getElementById(goal_tabs_id);
-        goal_tabs.style.display = "inline";
-
-        var goal_tab = document.getElementById(goal + "_tab");
-        toggle_goal_progress_vis(goal_tab);
-        // add_goal_progress_div(goal);
-    }
-
-    function toggle_goal_progress_vis(tabElement) {
-        var target = tabElement.id;
-        target = target.substring(0, target.length - 4);
-
-        var e = document.getElementsByClassName("goal_progress");
-        for (var i = 0; i < e.length; i++) {
-            if (e[i].id == target) {
-                e[i].style.display = "inline";
-            } else {
-                e[i].style.display = "none";
-            }
-        }
-
-        var e = document.getElementsByClassName("highlight_goal_tab");
-        for (var i = 0; i < e.length; i++) {
-            e[i].className = "goal_tab";
-        }
-        tabElement.className = "highlight_goal_tab"
-
-        add_goal_progress_div(target);
-    }
-
-    function add_goal_progress_div(goal) {
-        var e = document.getElementById(goal);
-        if (e && e.children.length == 0) {
-            var children = Array.from(document.getElementsByClassName(goal));
-            for (var i = 0; i < children.length; i++) {
-                var cloned_div = children[i].cloneNode(true);
-                cloned_div.className = "publication_container";
-                e.appendChild(cloned_div);
-            }
-        }
-    }
-</script>
+    </script>
 
 
-<!-- https://github.com/tholman/cursor-effects -->
-<script type="module">
-    import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
-    new fairyDustCursor();
-</script>
+    <!-- https://github.com/tholman/cursor-effects -->
+    <script type="module">
+        import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+        new fairyDustCursor();
+    </script>
 
 </head>
 
 
 <body>
 
-<div id="layout-content" style="margin-top:25px">
+    <div id="layout-content" style="margin-top:25px">
 
 
-<table>
-	<tbody>
-		<tr>
-			<td width="80%">
-				<div id="toptitle">
-					<h1>Wenxin Tai (台文鑫)<h1>
-				</div>
+        <table>
+            <tbody>
+                <tr>
+                    <td width="80%">
+                        <div id="toptitle">
+                            <h1>Wenxin Tai (台文鑫)<h1>
+                        </div>
 
-                <h3 class="title">PhD Candidate (2022-2026)</h3>
+                        <h3 class="title">PhD Candidate (2022-2026)</h3>
 
-				<p>
-                    <a href="https://www.icdmlab.com/">ICDM Lab</a></br>
-                    School of Software Engineering</br>
-                    University of Electronic Science and Technology of China</br>
-					</br>
-                    <!-- Email: wxtai at outlook dot com </br> -->
-                    Email: <span class="obfuscate">moc.kooltuo [TA] iatxw</span>
-					</br>
-                    <!-- [<a href="files/twx_CV.pdf">CV</a>] -->
-                    [<a href="https://scholar.google.com/citations?user=YyxocAIAAAAJ&hl=en">Google Scholar</a>] [<a href="https://github.com/judiebig">GitHub</a>] </br>
-				</p>
+                        <p>
+                            <a href="https://www.icdmlab.com/">ICDM Lab</a></br>
+                            School of Software Engineering</br>
+                            University of Electronic Science and Technology of China</br>
+                            </br>
+                            <!-- Email: wxtai at outlook dot com </br> -->
+                            Email: <span class="obfuscate">moc.kooltuo [TA] iatxw</span>
+                            </br>
+                            <!-- [<a href="files/twx_CV.pdf">CV</a>] -->
+                            [<a href="https://scholar.google.com/citations?user=YyxocAIAAAAJ&hl=en">Google Scholar</a>]
+                            [<a href="https://github.com/judiebig">GitHub</a>] </br>
+                        </p>
 
-			</td>
-			<td width="25%">
-				<img src="images/taiwenxin_v1.jpg" width="100%"/>
-			</td>
-		<tr>
-	</tbody>
-</table>
+                    </td>
+                    <td width="25%">
+                        <img src="images/taiwenxin_v1.jpg" width="100%" />
+                    </td>
+                <tr>
+            </tbody>
+        </table>
 
-<h2>Short Bio</h2> 
+        <h2>Short Bio</h2>
 
-<div style="display: flex; margin-bottom: -10px;">
-    <p>
-        I am currently a PhD candidate in Software Engineering at the University of Electronic Science and Technology of China (UESTC), under the supervision of Prof. Ting Zhong and Prof. Fan Zhou. I received my BS degree in Communication Engineering in 2019 and my MS degree in Software Engineering in 2022, advised by Prof. Qiao Liu and Prof. Tian Lan.
-        <br><br>
-        My research focuses on controllable generative models and trustworthy artificial intelligence (TAI).
-        <br><br>
-        <em>"The soul without imagination is what an observatory would be without a telescope."&nbsp;&nbsp;&nbsp;&nbsp;— Henry Ward Beecher</em>
-    </p>
-</div>
+        <div style="display: flex; margin-bottom: -10px;">
+            <p>
+                I am currently a PhD candidate in Software Engineering at the University of Electronic Science and
+                Technology of China (UESTC), under the supervision of Prof. Ting Zhong and Prof. Fan Zhou. I received my
+                BS degree in Communication Engineering in 2019 and my MS degree in Software Engineering in 2022, advised
+                by Prof. Qiao Liu and Prof. Tian Lan.
+                <br><br>
+                My research focuses on controllable generative models and trustworthy artificial intelligence (TAI).
+                <br><br>
+                <em>"The soul without imagination is what an observatory would be without a
+                    telescope."&nbsp;&nbsp;&nbsp;&nbsp;— Henry Ward Beecher</em>
+            </p>
+        </div>
 
-<h2>Ramblings</h2>
+        <h2>Ramblings</h2>
 
-<ul>
-    <li>
-        <div class="marker"><div>[2025-05] One paper accepted to ICML 2025 -- the Ship of Theseus has finally reached shore after 17 months at sea.</div></div>
-    </li>
-    <li>
-        <div class="marker"><div>[2025-01] Supported by the Youth Talents Support Project -- Doctoral Student Special Program.</div></div>
-    </li>
-    <div class="news" style="display:none">
-        <li>
-            <div class="marker"><div>[2024-12] Paper rebuttal, rejected, revise and resubmit (Ship of Theseus).</div></div>
-        </li>
-        <li>
-            <div class="marker">[2024-01] On a journey to achieve something unique.</div>
-        </li>
-    </div>
-</ul>
+        <ul>
+            <li>
+                <div class="marker">
+                    <div>[2026-01] ICLR 2026 accepted -- a light boat has already passed thousands of mountains.</div>
+                </div>
+            </li>
+            <li>
+                <div class="marker">
+                    <div>[2025-05] One paper accepted to ICML 2025 -- the Ship of Theseus has finally reached shore
+                        after 17 months at sea.</div>
+                </div>
+            </li>
+            <li>
+                <div class="marker">
+                    <div>[2025-01] Supported by the Youth Talents Support Project -- Doctoral Student Special Program.
+                    </div>
+                </div>
+            </li>
+            <div class="news" style="display:none">
+                <li>
+                    <div class="marker">
+                        <div>[2024-12] Paper rebuttal, rejected, revise and resubmit (Ship of Theseus).</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="marker">[2024-01] On a journey to achieve something unique.</div>
+                </li>
+            </div>
+        </ul>
 
-<div class="show_button">
-    <a href="javascript:toggle_vis('news')" id="showText">[Show more]</a>
-</div>
+        <div class="show_button">
+            <a href="javascript:toggle_vis('news')" id="showText">[Show more]</a>
+        </div>
 
-<h2>
-    Selected Publications
-    <!-- <span style="font-size: 50%;">(* denotes equal contribution, and <span class="corresponding">†</span> denotes the corresponding author)</span> -->
-</h2>
+        <h2>
+            Selected Publications
+            <!-- <span style="font-size: 50%;">(* denotes equal contribution, and <span class="corresponding">†</span> denotes the corresponding author)</span> -->
+        </h2>
 
-<!-- <div class="newline_bg">
+        <!-- <div class="newline_bg">
     <h3>2023</h3>
 </div> -->
 
-<div class="publication_container redundancy">
-    <div class="publication_image">
-        <img src="images/redundancy.jpg">
-    </div>
-    <div class="publication_title">
-        Redundancy Undermines the Trustworthiness of Self-Interpretable GNNs</br>
-        Wenxin Tai, Ting Zhong, Goce Trajcevski, Fan Zhou&#42<br>
-        ICML 2025</br>
-        [<a href="https://icml.cc/virtual/2025/poster/44426">Paper</a>] [<a href="https://github.com/ICDM-UESTC/TrustworthyExplanation">Code</a>]
-    </div>
-</div>
+        <div class="publication_container redundancy">
+            <div class="publication_image">
+                <img src="images/redundancy.jpg">
+            </div>
+            <div class="publication_title">
+                Redundancy Undermines the Trustworthiness of Self-Interpretable GNNs</br>
+                Wenxin Tai, Ting Zhong, Goce Trajcevski, Fan Zhou&#42<br>
+                ICML 2025</br>
+                [<a href="https://icml.cc/virtual/2025/poster/44426">Paper</a>] [<a
+                    href="https://github.com/ICDM-UESTC/TrustworthyExplanation">Code</a>]
+            </div>
+        </div>
 
-<div class="publication_container ddpm">
-    <div class="publication_image">
-        <img src="images/DOSE.jpg">
-    </div>
-    <div class="publication_title">
-        DOSE: Diffusion Dropout with Adaptive Prior for Speech Enhancement</br>
-        Wenxin Tai, Yue Lei, Fan Zhou&#42, Goce Trajcevski, Ting Zhong<br>
-        NeurIPS 2023</br>
-        [<a href="https://yesq11.github.io/DOSEPLUS">Page</a>] [<a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/7e966a12c2d6307adb8809aaa9acf057-Abstract-Conference.html">Paper</a>] [<a href="https://github.com/ICDM-UESTC/DOSE">Code</a>]
-    </div>
-</div>
+        <div class="publication_container ddpm">
+            <div class="publication_image">
+                <img src="images/DOSE.jpg">
+            </div>
+            <div class="publication_title">
+                DOSE: Diffusion Dropout with Adaptive Prior for Speech Enhancement</br>
+                Wenxin Tai, Yue Lei, Fan Zhou&#42, Goce Trajcevski, Ting Zhong<br>
+                NeurIPS 2023</br>
+                [<a href="https://yesq11.github.io/DOSEPLUS">Page</a>] [<a
+                    href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/7e966a12c2d6307adb8809aaa9acf057-Abstract-Conference.html">Paper</a>]
+                [<a href="https://github.com/ICDM-UESTC/DOSE">Code</a>]
+            </div>
+        </div>
 
-<div class="publication_container uncertainty">
-    <div class="publication_image">
-        <img src="images/TrustGeo.jpg">
-    </div>
-    <div class="publication_title">
-        TrustGeo: Uncertainty-Aware Dynamic Graph Learning for Trustworthy IP Geolocation</br>
-        Wenxin Tai, Bin Chen, Fan Zhou&#42, Ting Zhong, Goce Trajcevski, Yong Wang, Kai Chen<br>
-        KDD 2023</br>
-        [<a href="https://dl.acm.org/doi/10.1145/3580305.3599920">Paper</a>] [<a href="https://github.com/ICDM-UESTC/TrustGeo">Code</a>]
-    </div>
-</div>
+        <div class="publication_container uncertainty">
+            <div class="publication_image">
+                <img src="images/TrustGeo.jpg">
+            </div>
+            <div class="publication_title">
+                TrustGeo: Uncertainty-Aware Dynamic Graph Learning for Trustworthy IP Geolocation</br>
+                Wenxin Tai, Bin Chen, Fan Zhou&#42, Ting Zhong, Goce Trajcevski, Yong Wang, Kai Chen<br>
+                KDD 2023</br>
+                [<a href="https://dl.acm.org/doi/10.1145/3580305.3599920">Paper</a>] [<a
+                    href="https://github.com/ICDM-UESTC/TrustGeo">Code</a>]
+            </div>
+        </div>
 
-<div class="publication_container ddpm">
-    <div class="publication_image">
-        <img src="images/DR-DiffuSE.jpg">
-    </div>
-    <div class="publication_title">
-        Revisiting Denoising Diffusion Probabilistic Models for Speech Enhancement: Condition Collapse, Efficiency and Refinement</br>
-        Wenxin Tai, Fan Zhou, Goce Trajcevski, Ting Zhong&#42<br>
-        AAAI 2023</br>
-        [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/26597">Paper</a>] [<a href="https://github.com/judiebig/DR-DiffuSE">Code</a>]
-    </div>
-</div>
+        <div class="publication_container ddpm">
+            <div class="publication_image">
+                <img src="images/DR-DiffuSE.jpg">
+            </div>
+            <div class="publication_title">
+                Revisiting Denoising Diffusion Probabilistic Models for Speech Enhancement: Condition Collapse,
+                Efficiency and Refinement</br>
+                Wenxin Tai, Fan Zhou, Goce Trajcevski, Ting Zhong&#42<br>
+                AAAI 2023</br>
+                [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/26597">Paper</a>] [<a
+                    href="https://github.com/judiebig/DR-DiffuSE">Code</a>]
+            </div>
+        </div>
 
-<!-- <div class="publication_container robust">
+        <!-- <div class="publication_container robust">
     <div class="publication_image">
         <img src="images/RIPGeo.jpg">
     </div>
@@ -285,53 +308,58 @@
     </div>
 </div> -->
 
-<h2>Honors</h2>
+        <h2>Honors</h2>
 
-<ul>
-    <li>
-        <div class="marker">Youth Talents Support Project -- Doctoral Student Special Program (China Association for Science and Technology)</div> <div>2025</div>
-    </li>
-    <!-- <li>
+        <ul>
+            <li>
+                <div class="marker">Youth Talents Support Project -- Doctoral Student Special Program (China Association
+                    for Science and Technology)</div>
+                <div>2025</div>
+            </li>
+            <!-- <li>
         <div class="marker">Academic Rising Star of UESTC</div> <div>2024</div>
     </li> -->
-    <!-- <li>
+            <!-- <li>
         <div class="marker">Artificial Intelligence Challenge Runner-up (GNN-based Interpretable Community Detection Track), hosted by www.people.com.cn</div> <div>2023</div>
     </li> -->
-    <li>
-        <div class="marker">National Scholarship of China</div> <div>2021, 2023</div>
-    </li>
-    <li>
-        <div class="marker">Best Student Paper Award of the 24th IEEE International Conference on Mobile Data Management (MDM)</div> <div>2023</div>
-    </li>
-    <!-- <li>
+            <li>
+                <div class="marker">National Scholarship of China</div>
+                <div>2021, 2023</div>
+            </li>
+            <li>
+                <div class="marker">Best Student Paper Award of the 24th IEEE International Conference on Mobile Data
+                    Management (MDM)</div>
+                <div>2023</div>
+            </li>
+            <!-- <li>
         <div class="marker">Artificial Intelligence Challenge Runner-up (Dialog Generation Track), hosted by www.people.com.cn</div> <div>2022</div>
     </li> -->
-    <!-- <li>
+            <!-- <li>
         <div class="marker">Excellent Master's Thesis of UESTC</div> <div>2022</div>
     </li> -->
-    <!-- <li>
+            <!-- <li>
         <div class="marker">Sichuan Outstanding Graduates</div> <div>2022</div>
     </li> -->
-</ul>
+        </ul>
 
-<h2>Services</h2>
+        <h2>Services</h2>
 
-<ul>                                                                  
-    <li>
-        <div class="marker">Conference Reviewer: ICML, NeurIPS, ICLR, CVPR, KDD, theWebConf, AISTATS</div>
-    </li>                                                                       
-    <li>
-        <div class="marker">Journal Reviewer: TKDE, TNNLS, TITS, TNSE, TKDD</div>
-    </li>                                                                       
-</ul>
+        <ul>
+            <li>
+                <div class="marker">Conference Reviewer: ICML, NeurIPS, ICLR, CVPR, KDD, theWebConf, AISTATS</div>
+            </li>
+            <li>
+                <div class="marker">Journal Reviewer: TKDE, TNNLS, TITS, TNSE, TKDD</div>
+            </li>
+        </ul>
 
-<a href="https://www.easycounter.com/">
-<img src="https://www.easycounter.com/counter.php?judiebig"
-border="0" alt="HTML Counter"></a>
-<br><a href="https://www.easycounter.com/">Last update: July 2025</a>
+        <a href="https://www.easycounter.com/">
+            <img src="https://www.easycounter.com/counter.php?judiebig" border="0" alt="HTML Counter"></a>
+        <br><a href="https://www.easycounter.com/">Last update: July 2025</a>
 
-</div>
+    </div>
 
-</div>
+    </div>
 </body>
+
 </html>

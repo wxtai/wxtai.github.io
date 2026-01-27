@@ -434,7 +434,6 @@ table.imgtable, table.imgtable td {
 }
 
 .newline_bg {
-    /* background: url(heading_bg.png) repeat-x 0 7px; */
     margin-bottom: 5px;
     margin-top: 20px;
 }
@@ -449,8 +448,7 @@ sup {
 
 .research_tab {
 	flex: 1;
-	/* flex-grow: 1; */
-	text-align: center; /* 文字居中 */
+	text-align: center;
 	cursor: pointer;
 	padding: 10px 10px;
 	margin: 1px;
@@ -468,8 +466,7 @@ sup {
 	color: white;
 	font-weight: bold;
 	flex: 1;
-	/* flex-grow: 1; */
-	text-align: center; /* 文字居中 */
+	text-align: center;
 	cursor: pointer;
 	padding: 10px 10px;
 	margin: 1px;
@@ -491,13 +488,11 @@ sup {
 
 .progress_button {
 	margin-left: 1px;
-	/* flex: 1; */
 }
 
 .goal_tab {
 	flex: 1;
-	/* flex-grow: 1; */
-	text-align: center; /* 文字居中 */
+	text-align: center;
 	cursor: pointer;
 	padding: 5px 5px;
 	margin: 1px;
@@ -516,8 +511,7 @@ sup {
 	flex: 1;
 	color: white;
 	font-weight: bold;
-	/* flex-grow: 1; */
-	text-align: center; /* 文字居中 */
+	text-align: center;
 	cursor: pointer;
 	padding: 5px 5px;
 	margin: 1px;
