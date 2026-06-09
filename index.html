@@ -16,6 +16,7 @@
     </script>
 
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="keywords" content="Wenxin Tai, UESTC">
     <meta name="description" content="Wenxin Tai's home page">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -39,7 +40,7 @@
             var showText = document.getElementById("showText");
             for (var i = 0; i < e.length; i++) {
                 if (e[i].style.display == "none") {
-                    e[i].style.display = "inline";
+                    e[i].style.display = "";
                     showText.innerHTML = "[Show less]";
                 } else {
                     e[i].style.display = "none";
@@ -150,36 +151,32 @@
     <div id="layout-content" style="margin-top:25px">
 
 
-        <table>
-            <tbody>
-                <tr>
-                    <td width="80%">
-                        <div id="toptitle">
-                            <h1>Wenxin Tai (台文鑫)<h1>
-                        </div>
+        <div class="profile_header">
+            <div class="profile_info">
+                <div id="toptitle">
+                    <h1>Wenxin Tai (台文鑫)</h1>
+                </div>
 
-                        <h3 class="title">PhD</h3>
+                <h3 class="title">PhD</h3>
 
-                        <p>
-                            <a href="https://www.icdmlab.com/">ICDM Lab</a></br>
-                            School of Software Engineering</br>
-                            University of Electronic Science and Technology of China</br>
-                            </br>
-                            <!-- Email: wxtai at outlook dot com </br> -->
-                            Email: <span class="obfuscate">moc.kooltuo [TA] iatxw</span>
-                            </br>
-                            <!-- [<a href="files/twx_CV.pdf">CV</a>] -->
-                            [<a href="https://scholar.google.com/citations?user=YyxocAIAAAAJ&hl=en">Google Scholar</a>]
-                            [<a href="https://github.com/judiebig">GitHub</a>] </br>
-                        </p>
+                <p>
+                    <a href="https://www.icdmlab.com/">ICDM Lab</a></br>
+                    School of Software Engineering</br>
+                    University of Electronic Science and Technology of China</br>
+                    </br>
+                    <!-- Email: wxtai at outlook dot com </br> -->
+                    Email: <span class="obfuscate">moc.kooltuo [TA] iatxw</span>
+                    </br>
+                    <!-- [<a href="files/twx_CV.pdf">CV</a>] -->
+                    [<a href="https://scholar.google.com/citations?user=YyxocAIAAAAJ&amp;hl=en">Google Scholar</a>]
+                    [<a href="https://github.com/judiebig">GitHub</a>] </br>
+                </p>
+            </div>
 
-                    </td>
-                    <td width="25%">
-                        <img src="images/taiwenxin_v1.jpg" width="100%" />
-                    </td>
-                <tr>
-            </tbody>
-        </table>
+            <div class="profile_photo">
+                <img src="images/taiwenxin_v1.jpg" alt="Wenxin Tai" />
+            </div>
+        </div>
 
         <p>
             I am currently seeking faculty positions and am also open to excellent postdoctoral opportunities. Please
@@ -209,11 +206,9 @@
                         after 17 months at sea.</div>
                 </div>
             </li>
-            <div class="news" style="display:none">
-                <li>
-                    <div class="marker">[2024-01] On a journey to achieve something unique.</div>
-                </li>
-            </div>
+            <li class="news" style="display:none">
+                <div class="marker">[2024-01] On a journey to achieve something unique.</div>
+            </li>
         </ul>
 
         <div class="show_button">
@@ -231,11 +226,11 @@
 
         <div class="publication_container self-consistency">
             <div class="publication_image">
-                <img src="images/SC.png">
+                <img src="images/SC.png" alt="Self-Consistency project thumbnail">
             </div>
             <div class="publication_title">
                 Self-Consistency Improves the Trustworthiness of Self-Interpretable GNNs</br>
-                Wenxin Tai, Ting Zhong, Goce Trajcevski, Fan Zhou&#42<br>
+                Wenxin Tai, Ting Zhong, Goce Trajcevski, Fan Zhou&#42;<br>
                 ICLR 2026</br>
                 [<a href="https://icdm-uestc.github.io/SelfConsistencyXGNN">Page</a>] [<a href="https://iclr.cc/virtual/2026/poster/10008008">Paper</a>] [<a
                     href="https://github.com/ICDM-UESTC/SelfConsistencyXGNN">Code</a>]
@@ -244,11 +239,11 @@
 
         <div class="publication_container redundancy">
             <div class="publication_image">
-                <img src="images/EE.jpg">
+                <img src="images/EE.jpg" alt="Redundancy project thumbnail">
             </div>
             <div class="publication_title">
                 Redundancy Undermines the Trustworthiness of Self-Interpretable GNNs</br>
-                Wenxin Tai, Ting Zhong, Goce Trajcevski, Fan Zhou&#42<br>
+                Wenxin Tai, Ting Zhong, Goce Trajcevski, Fan Zhou&#42;<br>
                 ICML 2025</br>
                 [<a href="https://icml.cc/virtual/2025/poster/44426">Paper</a>] [<a
                     href="https://github.com/ICDM-UESTC/TrustworthyExplanation">Code</a>]
@@ -257,11 +252,11 @@
 
         <div class="publication_container ddpm">
             <div class="publication_image">
-                <img src="images/DOSE.jpg">
+                <img src="images/DOSE.jpg" alt="DOSE project thumbnail">
             </div>
             <div class="publication_title">
                 DOSE: Diffusion Dropout with Adaptive Prior for Speech Enhancement</br>
-                Wenxin Tai, Yue Lei, Fan Zhou&#42, Goce Trajcevski, Ting Zhong<br>
+                Wenxin Tai, Yue Lei, Fan Zhou&#42;, Goce Trajcevski, Ting Zhong<br>
                 NeurIPS 2023</br>
                 [<a href="https://yesq11.github.io/DOSEPLUS">Page</a>] [<a
                     href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/7e966a12c2d6307adb8809aaa9acf057-Abstract-Conference.html">Paper</a>]
@@ -271,11 +266,11 @@
 
         <div class="publication_container uncertainty">
             <div class="publication_image">
-                <img src="images/TrustGeo.jpg">
+                <img src="images/TrustGeo.jpg" alt="TrustGeo project thumbnail">
             </div>
             <div class="publication_title">
                 TrustGeo: Uncertainty-Aware Dynamic Graph Learning for Trustworthy IP Geolocation</br>
-                Wenxin Tai, Bin Chen, Fan Zhou&#42, Ting Zhong, Goce Trajcevski, Yong Wang, Kai Chen<br>
+                Wenxin Tai, Bin Chen, Fan Zhou&#42;, Ting Zhong, Goce Trajcevski, Yong Wang, Kai Chen<br>
                 KDD 2023</br>
                 [<a href="https://dl.acm.org/doi/10.1145/3580305.3599920">Paper</a>] [<a
                     href="https://github.com/ICDM-UESTC/TrustGeo">Code</a>]
@@ -284,12 +279,12 @@
 
         <div class="publication_container ddpm">
             <div class="publication_image">
-                <img src="images/DR-DiffuSE.jpg">
+                <img src="images/DR-DiffuSE.jpg" alt="DR-DiffuSE project thumbnail">
             </div>
             <div class="publication_title">
                 Revisiting Denoising Diffusion Probabilistic Models for Speech Enhancement: Condition Collapse,
                 Efficiency and Refinement</br>
-                Wenxin Tai, Fan Zhou, Goce Trajcevski, Ting Zhong&#42<br>
+                Wenxin Tai, Fan Zhou, Goce Trajcevski, Ting Zhong&#42;<br>
                 AAAI 2023</br>
                 [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/26597">Paper</a>] [<a
                     href="https://github.com/judiebig/DR-DiffuSE">Code</a>]
@@ -302,7 +297,7 @@
     </div>
     <div class="publication_title">
         RIPGeo: Robust Street-Level IP Geolocation</br>
-        <b>Wenxin Tai</b>, Bin Chen, Ting Zhong, Yong Wang, Kai Chen, Fan Zhou&#42<br>
+        <b>Wenxin Tai</b>, Bin Chen, Ting Zhong, Yong Wang, Kai Chen, Fan Zhou&#42;<br>
         MDM 2023.</br> 
         [<a href="https://drive.google.com/file/d/1pmMtty-USt-nIbMTkZ3uq3zXc1KNvrQg/view">Paper</a>] [<a href="https://github.com/binchen4110/RIPGeo">Code</a>]
     </div>
@@ -312,8 +307,9 @@
 
         <ul>
             <li>
-                <div class="marker">Youth Talents Support Project -- Doctoral Student Special Program (China Association
-                    for Science and Technology)</div>
+                <!-- <div class="marker">Youth Talents Support Project -- Doctoral Student Special Program (China Association
+                    for Science and Technology)</div> -->
+                <div class="marker">Youth Talents Support Project -- Doctoral Student Special Program</div>
                 <div>2025</div>
             </li>
             <!-- <li>
@@ -327,8 +323,7 @@
                 <div>2021, 2023</div>
             </li>
             <li>
-                <div class="marker">Best Student Paper Award of the 24th IEEE International Conference on Mobile Data
-                    Management (MDM)</div>
+                <div class="marker">Best Student Paper Award of IEEE MDM</div>
                 <div>2023</div>
             </li>
             <!-- <li>
@@ -356,8 +351,6 @@
         <a href="https://www.easycounter.com/">
             <img src="https://www.easycounter.com/counter.php?judiebig" border="0" alt="HTML Counter"></a>
         <br><a href="https://www.easycounter.com/">Last update: Jun 2026</a>
-
-    </div>
 
     </div>
 </body>
